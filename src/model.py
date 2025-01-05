@@ -52,6 +52,6 @@ class Nucleo(Pcb):
             print(f"Erreur : Impossible d'ouvrir le port série {self.uart_port}.\n{e}")
         except KeyboardInterrupt:
             print("\nConnexion UART fermée. Programme arrêté.")
-        execept UnicodeDecodeError as myExcep:
-            data = ser.readline().strip('\t')
+        except UnicodeDecodeError as myExcep:
+            data = ser.readline().strip("\t")
             print(f"Données reçues : {data[0].decode("utf-8")}")
